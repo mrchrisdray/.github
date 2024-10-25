@@ -1,22 +1,18 @@
 name: Project Request
 description: Request new project setup
 labels: ["repo", "review", "team", "project"]
-context:
-  github: github
 
 body:
   - type: dropdown
     id: team
-    label: Select the team
-    options:
-      {% for team in github.teams %}
-      - {{ team.name }}
-      {% endfor %}
+    attributes:
+      label: Select the team
+      options:
+      - team1
 
   - type: textarea
-    id: reason
-    label: Reason for update
-
-  - type: textarea
-    id: changes
-    label: Describe the changes to be mad
+    attributes:
+      label: free fill txt area
+      description: free fill text
+    validations:
+      required: false
